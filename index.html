@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="GN Finance">
+<meta name="theme-color" content="#86593d">
+<title>GN Finance</title>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="apple-touch-icon.png">
+<style>
+html,body{margin:0;height:100%;background:#fff;font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#86593d}
+.c{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+img{width:96px;height:96px}
+a{color:#86593d;font-weight:600}
+</style>
+</head>
+<body>
+<div class="c">
+  <img src="apple-touch-icon.png" alt="">
+  <div id="msg" style="text-align:center;line-height:1.6;max-width:300px">To install: tap the Share button, then <b>Add to Home Screen</b>.<br><span dir="rtl">للتثبيت: اضغط زر المشاركة ثم <b>إضافة إلى الشاشة الرئيسية</b>.</span></div>
+  <a id="go" href="https://script.google.com/macros/s/AKfycbyNgAtUcn28oKVlLDtGHnAGItDRE4tTsaXFTkpL-YhhgBkLgi1xlrfCFk5FMlnzgml6/exec">Open GN Finance / افتح التطبيق</a>
+</div>
+<script>
+/* Google sign-in does not work inside a frame on iPhone, so this page simply opens the GN Finance web app.
+   Added to the Home Screen it gives the Good Nature icon and the name "GN Finance".
+   Opened from the Home Screen icon: go straight to the app. Opened in Safari: show how to install. */
+if (window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches) {
+  document.getElementById('msg').textContent = 'Opening GN Finance…';
+  location.replace(document.getElementById('go').href);
+}
+</script>
+</body>
+</html>
